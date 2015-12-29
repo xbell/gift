@@ -1,0 +1,8 @@
+<h1>Gifts Received</h1>
+
+<% @received.each do |item| %>
+  <span class= "gift"><%= item.gift %></span>
+  <span class = "to"><%= item.from %></span>
+  <span class = "occasion"><%= item.occasion %></span>
+  <span class = "year"><%= item.year %></span>
+<% end %>
