@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "/", to: "home#index", as: :home
   get "/received", to: "home#received", as: :received
   get "/given", to: "home#given", as: :given
+  get "/received/:id", to: "home#delete_received", as: :delete_received
+  get "/given/:id", to: "home#delete_given", as: :delete_given
 
   post "/given", to: "home#create_given"
   post "/received", to: "home#create_received"

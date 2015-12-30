@@ -37,11 +37,11 @@
       <td><%= item.occasion %></td>
       <td><%= item.year %></td>
       <td><%= link_to "Edit Entry" %></td>
-      <td><%= link_to "Delete Entry" %></td>
+      <td><%= link_to "Delete Entry", delete_given_path(item), method: :get, data: { confirm: "Delete gift entry?" } %></td>
     </tr>
   <% end %>
   </table>
 </div>
 
-
+<%= link_to "Gifts Received", received_path %>
 <%= link_to "Gifts Home", home_path %>

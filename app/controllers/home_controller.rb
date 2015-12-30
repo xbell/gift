@@ -9,6 +9,10 @@ class HomeController < ApplicationController
     @given = Give.all
   end
 
+  def received
+    @received = Receive.all
+  end
+
   def create_given
     @gift_given = Give.new
     @gift_given.gift = params[:gift]
@@ -37,8 +41,16 @@ class HomeController < ApplicationController
     end
   end
 
-  def received
-    @received = Receive.all
+  def delete_given
+    @gift_given = Give.find(params[:id])
+    @gift_given.destroy
+    redirect_to "/given"
+  end
+
+  def delete_received
+    @gift_received = Receive.find(params[:id])
+    @gift_received.destroy
+    redirect_to "/received"
   end
 
 end
