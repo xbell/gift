@@ -1,8 +1,47 @@
 <h1>Gifts Given</h1>
 
-<% @given.each do |item| %>
+<div class = "form">
+  <form action="/given" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <div>
+      <input type="text" id = "gift-input" name="gift" placeholder="Gift Item" />
+      <input type="text" id = "to-input" name="to" placeholder="Gift For"/>
+      <input type="text" id = "occasion-input" name="occasion" placeholder="Occasion"/>
+      <input type="text" id = "year-input" name="year" placeholder="Year"/>
+      <input type="submit" />
+    </div>
+  </form>
+</div>
+
+<!-- <% @given.each do |item| %>
   <span class= "gift"><%= item.gift %></span>
   <span class = "to"><%= item.to %></span>
   <span class = "occasion"><%= item.occasion %></span>
   <span class = "year"><%= item.year %></span>
-<% end %>
+<% end %> -->
+
+<div class="food_table">
+  <table>
+    <tr>
+      <th>Gift Item</th>
+      <th>Gift To</th>
+      <th>Occasion</th>
+      <th>Year</th>
+      <th></th>
+    </tr>
+
+  <% @given.each do |item| %>
+    <tr>
+      <td><%= item.gift %></td>
+      <td><%= item.to %></td>
+      <td><%= item.occasion %></td>
+      <td><%= item.year %></td>
+      <td><%= link_to "Edit Entry" %></td>
+      <td><%= link_to "Delete Entry" %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+
+<%= link_to "Gifts Home", home_path %>

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
-  get "/", to: "home#index"
+  get "/", to: "home#index", as: :home
   get "/received", to: "home#received", as: :received
   get "/given", to: "home#given", as: :given
+
+  post "/given", to: "home#create_given"
+  post "/received", to: "home#create_received"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
