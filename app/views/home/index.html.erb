@@ -1,12 +1,48 @@
-<h1>Gift App</h1>
+<div class="container">
 
-<% @given.each do |item| %>
-  <span class= "gift"><%= item.gift %></span>
-  <span class = "to"><%= item.to %></span>
-  <span class = "occasion"><%= item.occasion %></span>
-  <span class = "year"><%= item.year %></span>
-<% end %>
+  <h1>Gift App</h1>
 
-<br>
-<%= link_to "Gifts Received", received_path %>
-<%= link_to "Gifts Given", given_path %>
+  <div class="gift_table">
+    <table>
+      <tr>
+        <th>Gift Item</th>
+        <th>Gift To</th>
+        <th>Occasion</th>
+        <th>Year</th>
+      </tr>
+
+    <% @given.each do |item| %>
+      <tr>
+        <td><%= item.gift %></td>
+        <td><%= item.to %></td>
+        <td><%= item.occasion %></td>
+        <td><%= item.year %></td>
+    <% end %>
+    </table>
+  </div>
+
+  <div class="gift_table">
+    <table>
+      <tr>
+        <th>Gift Item</th>
+        <th>Gift From</th>
+        <th>Occasion</th>
+        <th>Year</th>
+      </tr>
+
+      <% @received.each do |item| %>
+        <tr>
+          <td><%= item.gift %></td>
+          <td><%= item.from %></td>
+          <td><%= item.occasion %></td>
+          <td><%= item.year %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+  <br>
+  <%= link_to "Gifts Received", received_path %>
+  <%= link_to "Gifts Given", given_path %>
+
+</div>

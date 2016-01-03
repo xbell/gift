@@ -20,7 +20,7 @@
   <span class = "year"><%= item.year %></span>
 <% end %> -->
 
-<div class="food_table">
+<div class="gift_table">
   <table>
     <tr>
       <th>Gift Item</th>
@@ -36,7 +36,7 @@
       <td><%= item.to %></td>
       <td><%= item.occasion %></td>
       <td><%= item.year %></td>
-      <td><%= link_to "Edit Entry" %></td>
+      <td><%= link_to "Edit Entry", edit_given_path(item), method: :get %></td>
       <td><%= link_to "Delete Entry", delete_given_path(item), method: :get, data: { confirm: "Delete gift entry?" } %></td>
     </tr>
   <% end %>

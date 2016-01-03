@@ -1,0 +1,14 @@
+<h1>Edit <%= @gift_received.gift %></h1>
+
+<div class = "form">
+  <form action="/received/edit/<%= params[:id] %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <div>
+      <input type="text" id = "gift-input" name="gift" placeholder="Gift Item" value="<%= @gift_received.gift %>" />
+      <input type="text" id = "from-input" name="from" placeholder="Gift From" value="<%= @gift_received.from %>"/>
+      <input type="text" id = "occasion-input" name="occasion" placeholder="Occasion" value="<%= @gift_received.occasion %>"/>
+      <input type="text" id = "year-input" name="year" placeholder="Year" value="<%= @gift_received.year %>"/>
+      <input type="submit" value="Update"/>
+    </div>
+  </form>
+</div>

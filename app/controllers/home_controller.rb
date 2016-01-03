@@ -41,6 +41,38 @@ class HomeController < ApplicationController
     end
   end
 
+  def edit_given
+    @gift_given = Give.find(params[:id])
+  end
+
+  def update_given
+    @gift_given = Give.find(params[:id])
+    @gift_given.to = params[:to]
+    @gift_given.occasion = params[:occasion]
+    @gift_given.year = params[:year]
+    if @gift_given.save
+      redirect_to "/given"
+    else
+      render "/given"
+    end
+  end
+
+  def edit_received
+    @gift_received = Receive.find(params[:id])
+  end
+
+  def update_received
+    @gift_received = Receive.find(params[:id])
+    @gift_received.from = params[:from]
+    @gift_received.occasion = params[:occasion]
+    @gift_received.year = params[:year]
+    if @gift_received.save
+      redirect_to "/received"
+    else
+      render "/received"
+    end
+  end
+
   def delete_given
     @gift_given = Give.find(params[:id])
     @gift_given.destroy

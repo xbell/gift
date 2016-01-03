@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
 
   get "/", to: "home#index", as: :home
-  get "/received", to: "home#received", as: :received
   get "/given", to: "home#given", as: :given
-  get "/received/:id", to: "home#delete_received", as: :delete_received
-  get "/given/:id", to: "home#delete_given", as: :delete_given
+  get "/received", to: "home#received", as: :received
 
   post "/given", to: "home#create_given"
   post "/received", to: "home#create_received"
+
+  get "/given/edit/:id", to: "home#edit_given", as: :edit_given
+  post "/given/edit/:id", to: "home#update_given", as: :update_given
+  get "/received/edit/:id", to: "home#edit_received", as: :edit_received
+  post "/received/edit/:id", to: "home#update_received", as: :update_received
+
+  get "/given/:id", to: "home#delete_given", as: :delete_given
+  get "/received/:id", to: "home#delete_received", as: :delete_received
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

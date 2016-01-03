@@ -1,47 +1,52 @@
-<h1>Gifts Received</h1>
+<div class="container">
 
-<div class = "form">
-  <form action="/received" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <div>
-      <input type="text" id = "gift-input" name="gift" placeholder="Gift Item" />
-      <input type="text" id = "from-input" name="from" placeholder="Gift From"/>
-      <input type="text" id = "occasion-input" name="occasion" placeholder="Occasion"/>
-      <input type="text" id = "year-input" name="year" placeholder="Year"/>
-      <input type="submit" />
-    </div>
-  </form>
+  <h1>Gifts Received</h1>
+
+  <div class = "form">
+    <form action="/received" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <div>
+        <input type="text" id = "gift-input" name="gift" placeholder="Gift Item" />
+        <input type="text" id = "from-input" name="from" placeholder="Gift From"/>
+        <input type="text" id = "occasion-input" name="occasion" placeholder="Occasion"/>
+        <input type="text" id = "year-input" name="year" placeholder="Year"/>
+        <input type="submit" />
+      </div>
+    </form>
+  </div>
+
+  <!-- <% @received.each do |item| %>
+    <span class= "gift"><%= item.gift %></span>
+    <span class = "from"><%= item.from %></span>
+    <span class = "occasion"><%= item.occasion %></span>
+    <span class = "year"><%= item.year %></span>
+  <% end %> -->
+
+  <div class="gift_table">
+    <table>
+      <tr>
+        <th>Gift Item</th>
+        <th>Gift From</th>
+        <th>Occasion</th>
+        <th>Year</th>
+        <th></th>
+      </tr>
+
+    <% @received.each do |item| %>
+      <tr>
+        <td><%= item.gift %></td>
+        <td><%= item.from %></td>
+        <td><%= item.occasion %></td>
+        <td><%= item.year %></td>
+        <td><%= link_to "Edit Entry", edit_received_path(item), method: :get %></td>
+        <td><%= link_to "Delete Entry", delete_received_path(item), method: :get, data: { confirm: "Delete gift entry?" } %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+
+  <%= link_to "Gifts Given", given_path %>
+  <%= link_to "Gifts Home", home_path %>
+
+
 </div>
-
-<!-- <% @received.each do |item| %>
-  <span class= "gift"><%= item.gift %></span>
-  <span class = "from"><%= item.from %></span>
-  <span class = "occasion"><%= item.occasion %></span>
-  <span class = "year"><%= item.year %></span>
-<% end %> -->
-
-<div class="food_table">
-  <table>
-    <tr>
-      <th>Gift Item</th>
-      <th>Gift From</th>
-      <th>Occasion</th>
-      <th>Year</th>
-      <th></th>
-    </tr>
-
-  <% @received.each do |item| %>
-    <tr>
-      <td><%= item.gift %></td>
-      <td><%= item.from %></td>
-      <td><%= item.occasion %></td>
-      <td><%= item.year %></td>
-      <td><%= link_to "Edit Entry" %></td>
-      <td><%= link_to "Delete Entry", delete_received_path(item), method: :get, data: { confirm: "Delete gift entry?" } %></td>
-    </tr>
-  <% end %>
-  </table>
-</div>
-
-<%= link_to "Gifts Given", given_path %>
-<%= link_to "Gifts Home", home_path %>
