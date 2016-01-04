@@ -13,13 +13,6 @@
   </form>
 </div>
 
-<!-- <% @given.each do |item| %>
-  <span class= "gift"><%= item.gift %></span>
-  <span class = "to"><%= item.to %></span>
-  <span class = "occasion"><%= item.occasion %></span>
-  <span class = "year"><%= item.year %></span>
-<% end %> -->
-
 <div class="gift_table">
   <table>
     <tr>
@@ -27,6 +20,7 @@
       <th>Gift To</th>
       <th>Occasion</th>
       <th>Year</th>
+      <th></th>
       <th></th>
     </tr>
 
@@ -43,5 +37,7 @@
   </table>
 </div>
 
-<%= link_to "Gifts Received", received_path %>
-<%= link_to "Gifts Home", home_path %>
+<div class="links2">
+  <a><%= link_to "Gifts Received", received_path %></a>
+  <a><%= link_to "Gifts Home", home_path %></a>
+</div>

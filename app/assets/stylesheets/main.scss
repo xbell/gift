@@ -1,0 +1,101 @@
+body {
+  background-image: url(http://www.magic4walls.com/wp-content/uploads/2014/04/gift.-gold-ribbon-glitter-holidays-wallpaper.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.links {
+  font-family: "Phosphate";
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 30px;
+  text-shadow: 0px -1px 5px snow;
+  letter-spacing: 2px;
+}
+
+a:link {
+    color: rgb(65, 88, 120);
+}
+
+a:visited {
+    color: rgb(42, 81, 134);
+}
+
+a:hover {
+    color: rgb(170, 7, 56);
+}
+
+a:active {
+    color: rgb(42, 81, 134);
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: snow;
+  text-shadow: 0px -1px 5px rgb(170, 7, 56);
+  font-family: "Phosphate";
+  letter-spacing: 60px;
+}
+
+.form {
+  margin: 1% 24% 5% 24%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+}
+
+.textbox {
+  font-size: 15px;
+}
+
+.submit {
+  font-size: 16px;
+  color: rgb(170, 7, 56);
+}
+
+.gift_table {
+  text-align: center;
+}
+
+.gift_table table {
+  color: rgb(170, 7, 56);
+  text-shadow: 0px -1px 5px snow;
+  font-family: "Phosphate";
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgba(4, 6, 19, 0.45);
+  vertical-align: top;
+  border-collapse: collapse;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.gift_table tr th {
+  border: double black;
+  padding: 16px;
+  text-decoration: underline;
+}
+
+.gift_table tr td {
+  border: double black;
+  padding: 16px;
+}
+
+.links2 {
+  font-family: "Phosphate";
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 2%;
+  font-size: 20px;
+  text-shadow: 0px -1px 5px snow;
+  letter-spacing: 2px;
+}

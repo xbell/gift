@@ -2,6 +2,12 @@
 
   <h1>Gift App</h1>
 
+  <div class=links>
+    <a><%= link_to "Gifts Received", received_path %></a>
+    <br>
+    <a><%= link_to "Gifts Given", given_path %></a>
+  </div>
+
   <div class="gift_table">
     <table>
       <tr>
@@ -17,11 +23,12 @@
         <td><%= item.to %></td>
         <td><%= item.occasion %></td>
         <td><%= item.year %></td>
+      </tr>
     <% end %>
     </table>
-  </div>
+  <!-- </div> -->
 
-  <div class="gift_table">
+  <!-- <div class="gift_table"> -->
     <table>
       <tr>
         <th>Gift Item</th>
@@ -42,7 +49,7 @@
     </div>
 
   <br>
-  <%= link_to "Gifts Received", received_path %>
-  <%= link_to "Gifts Given", given_path %>
+  <!-- <%= link_to "Gifts Received", received_path %>
+  <%= link_to "Gifts Given", given_path %> -->
 
 </div>

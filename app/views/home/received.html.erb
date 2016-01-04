@@ -6,21 +6,14 @@
     <form action="/received" method="POST">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
       <div>
-        <input type="text" id = "gift-input" name="gift" placeholder="Gift Item" />
-        <input type="text" id = "from-input" name="from" placeholder="Gift From"/>
-        <input type="text" id = "occasion-input" name="occasion" placeholder="Occasion"/>
-        <input type="text" id = "year-input" name="year" placeholder="Year"/>
-        <input type="submit" />
+        <input class="textbox" type="text" id = "gift-input" name="gift" placeholder="Gift Item" />
+        <input class="textbox" type="text" id = "from-input" name="from" placeholder="Gift From"/>
+        <input class="textbox" type="text" id = "occasion-input" name="occasion" placeholder="Occasion"/>
+        <input class="textbox" type="text" id = "year-input" name="year" placeholder="Year"/>
+        <input class="submit" type="submit" />
       </div>
     </form>
   </div>
-
-  <!-- <% @received.each do |item| %>
-    <span class= "gift"><%= item.gift %></span>
-    <span class = "from"><%= item.from %></span>
-    <span class = "occasion"><%= item.occasion %></span>
-    <span class = "year"><%= item.year %></span>
-  <% end %> -->
 
   <div class="gift_table">
     <table>
@@ -29,6 +22,7 @@
         <th>Gift From</th>
         <th>Occasion</th>
         <th>Year</th>
+        <th></th>
         <th></th>
       </tr>
 
@@ -45,8 +39,10 @@
     </table>
   </div>
 
-  <%= link_to "Gifts Given", given_path %>
-  <%= link_to "Gifts Home", home_path %>
-
+  <div class="links2">
+    <a><%= link_to "Gifts Given", given_path %></a>
+    <br>
+    <a><%= link_to "Gifts Home", home_path %></a>
+  </div>
 
 </div>

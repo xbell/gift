@@ -53,7 +53,7 @@ class HomeController < ApplicationController
     if @gift_given.save
       redirect_to "/given"
     else
-      render "/given"
+      redirect_to "/given/edit/#{params[:id]}"
     end
   end
 
@@ -69,7 +69,7 @@ class HomeController < ApplicationController
     if @gift_received.save
       redirect_to "/received"
     else
-      render "/received"
+      redirect_to "/received/edit/#{params[:id]}"
     end
   end
 

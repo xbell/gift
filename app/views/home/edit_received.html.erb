@@ -5,10 +5,22 @@
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
     <div>
       <input type="text" id = "gift-input" name="gift" placeholder="Gift Item" value="<%= @gift_received.gift %>" />
+      <br>
       <input type="text" id = "from-input" name="from" placeholder="Gift From" value="<%= @gift_received.from %>"/>
+      <br>
       <input type="text" id = "occasion-input" name="occasion" placeholder="Occasion" value="<%= @gift_received.occasion %>"/>
+      <br>
       <input type="text" id = "year-input" name="year" placeholder="Year" value="<%= @gift_received.year %>"/>
+      <br>
       <input type="submit" value="Update"/>
     </div>
   </form>
+</div>
+
+<div class="links2">
+  <a><%= link_to "Gifts Received", received_path %></a>
+  <br>
+  <a><%= link_to "Gifts Given", given_path %></a>
+  <br>
+  <a><%= link_to "Gifts Home", home_path %></a>
 </div>
